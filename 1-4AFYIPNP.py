@@ -14,3 +14,7 @@ for fila in matriz:
                     break
             if es_primo:
                 print(num, "es PRIMO")
+                
+#for i in de range (2, int(numero ** 0.5) +1):
+# if numero % i == 0:
+# es_primo = false 
