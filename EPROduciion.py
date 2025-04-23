@@ -19,3 +19,4 @@ print("-"*100)
 for ip_o, ip_d, p_o, p_d, proto in zip(ip_origen, ip_destino, puerto_origen, puerto_destino, protocolo):
     print(f"{ip_o:<15}{ip_d:<15}{p_o:<15}{p_d:<17}{proto}")
     print("="*100)
+ 
