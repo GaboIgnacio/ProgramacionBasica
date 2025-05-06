@@ -1,0 +1,19 @@
+import CSV
+datos_matris = [
+    ["Nombre", "edad", "ciudad"],
+    ["luis", "30", "temuco"],
+    ["ana", "25", "valparaiso"],
+    ["gabriel", "23", "santiago"]
+]
+with open("datos.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerows(datos_matris)
+
+import csv
+with open("datos.csv", "r") as file:
+    reader = csv.reader(file)
+    for fila in reader:
+        print(fila)
+# Este código sirve para:
+# 1. Crear un archivo CSV llamado "datos.csv" y escribir una matriz de datos (nombres, edades y ciudades) en el archivo.
+# 2. Leer el archivo "datos.csv" y mostrar su contenido fila por fila en la consola.
