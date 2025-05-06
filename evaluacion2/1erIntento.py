@@ -7,7 +7,7 @@ import re
 # Datos pre-cargados
 datos = [
     ["192.168.1.2", "AA:BB:CC:DD:EE:FF", "10.0.0.2", 80, "TCP", "Permitido"],
-    ["172.16.1.2", "24:01:20:02:20:25", "192.168.0.2", 443, "UDP", "Denegado"]
+    ["172.167.168.244", "24:01:20:02:20:25", "192.168.0.2", 443, "UDP", "Denegado"]
 ]
 
 # Función para validar dirección IP
@@ -17,7 +17,7 @@ def validar_ip(mensaje):
         octetos = ip.strip().split(".")
         if len(octetos) == 4 and all(o.isdigit() for o in octetos):
             octetos = list(map(int, octetos))
-            if all(0 <= o <= 255 for o in octetos[:3]) and octetos[3] != 0:
+            if 1 <= octetos[0] <= 255 and all(0 <= o <= 255 for o in octetos[1:3]) and octetos[3] != 0:
                 return ip
         print("❌ IP inválida. Recuerda: los primeros 3 octetos deben ser entre 0 y 255, y el último NO puede ser 0.")
 
@@ -60,12 +60,12 @@ def permitido_denegado():
 # Función para mostrar los datos
 def mostrar_datos():
     print("\nDatos almacenados:")
-    print("="*80)
-    print("ID | IP Origen      | MAC                | IP Destino     | Puerto | Protocolo | Estado")
-    print("="*80)
+    print("=" * 100)
+    print(f"{'ID':<3}| {'IP Origen':<17} | {'MAC':<19} | {'IP Destino':<17} | {'Puerto':<7} | {'Protocolo':<9} | {'Estado'}")
+    print("=" * 100)
     for i, d in enumerate(datos):
-        print(f"{i:<3}| {d[0]:<15} {d[1]:<18} {d[2]:<15} {d[3]:<7} {d[4]:<9} {d[5]}")
-    print("="*80)
+        print(f"{i:<3}| {d[0]:<17} | {d[1]:<19} | {d[2]:<17} | {str(d[3]):<7} | {d[4]:<9} | {d[5]}")
+    print("=" * 100)
 
 # Función para agregar datos
 def agregar():
