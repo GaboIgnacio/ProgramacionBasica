@@ -1,0 +1,5 @@
+Tiempo,IP Origen,IP Destino,Protocolo,Dominio
+2025-05-10 16:20:00.183732,10.7.2.127,192.168.10.111,DNS,mobile.events.data.microsoft.com
+2025-05-10 16:20:00.184186,10.7.2.127,192.168.10.111,DNS,mobile.events.data.microsoft.com
+2025-05-10 16:20:00.187075,192.168.10.111,10.7.2.127,DNS,mobile.events.data.microsoft.com
+2025-05-10 16:20:00.187752,192.168.10.111,10.7.2.127,DNS,mobile.events.data.microsoft.com
