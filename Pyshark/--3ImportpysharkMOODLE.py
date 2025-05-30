@@ -1,9 +1,8 @@
 import pyshark
-INTERFAZ = 'en0' # cambiar por la interfaz del equipo
+INTERFAZ = 'Wi-Fi'
 cap = pyshark.LiveCapture(interface=INTERFAZ)
 paquetes_ip = []
 for packet in cap.sniff_continuously(packet_count=10):
-
     if hasattr(packet, 'ip'):          
         origen = packet.ip.src
         destino = packet.ip.dst
